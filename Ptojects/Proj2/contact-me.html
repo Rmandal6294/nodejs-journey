@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: #fff;
+            color: #667eea;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: transparent;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .social-icons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .social-icon {
+            font-size: 2rem;
+            color: #fff;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: #ffd700;
+        }
+        
+        .social-title {
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Me</h1>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <div class="social-title">Connect with me:</div>
+        <div class="social-icons">
+            <a href="#" class="social-icon" title = "git">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-icon" title = "instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" title = "Linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .profile-section {
+            text-align: center;
+        }
+        
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-placeholder {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            margin-bottom: 1.5rem;
+            font-size: 4rem;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #ffd700;
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .skills-section {
+            margin: 2rem 0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            background: #fff;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+        }
+        
+        .btn-outline:hover {
+            background: #fff;
+            color: #667eea;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .profile-image,
+            .profile-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .intro-text {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-image,
+            .profile-placeholder {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .profile-section {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .info-section {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Me</h1>
+        
+        <div class="about-content">
+            <div class="profile-section">
+                <!-- Replace with your actual image -->
+                <div class="profile-placeholder">
+                    <i class="fas fa-user"></i>
+                </div>
+                <!-- Or use this if you have an image -->
+                <!-- <img src="your-profile-image.jpg" alt="Profile Picture" class="profile-image"> -->
+                
+                <div class="cta-buttons">
+                    <a href="index.html" class="btn">Home</a>
+                    <a href="contact-me.html" class="btn btn-outline">Contact</a>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h2>Hello, I'm Ranit Mandal</h2>
+                
+                <p class="intro-text">
+                    I'm a passionate developer and creative problem solver with a love for building 
+                    innovative digital experiences. With expertise in modern web technologies, I 
+                    specialize in creating user-friendly applications that make a difference.
+                </p>
+                
+                <div class="skills-section">
+                    <h2>Skills & Expertise</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fas fa-code skill-icon"></i>
+                            <h3>Web Development</h3>
+                            <p>HTML, CSS, JavaScript, React</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-paint-brush skill-icon"></i>
+                            <h3>UI/UX Design</h3>
+                            <p>Figma, Adobe XD, Responsive Design</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server skill-icon"></i>
+                            <h3>Backend</h3>
+                            <p>Node.js, Express, MongoDB</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="intro-text">
+                    When I'm not coding, you can find me exploring new technologies, contributing to 
+                    open-source projects, or enjoying outdoor adventures. I believe in continuous 
+                    learning and pushing the boundaries of what's possible.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

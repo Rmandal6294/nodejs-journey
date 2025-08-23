@@ -1,0 +1,20 @@
+{
+  "name": "proj2-website",
+  "version": "1.0.0",
+  "description": "A simple website with multiple pages served by Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "website",
+    "nodejs",
+    "http-server"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
