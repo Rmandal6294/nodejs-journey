@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><%= title %></h1>
+      <a href="/new" class="new-message-btn">Add New Message</a>
+    </header>
+
+    <main>
+      <div class="messages">
+        <% if (messages.length === 0) { %>
+          <p class="no-messages">No messages yet. <a href="/new">Add the first one!</a></p>
+        <% } else { %>
+          <% messages.forEach(message => { %>
+            <div class="message-card">
+              <div class="message-header">
+                <span class="user"><%= message.user %></span>
+                <span class="date"><%= message.added.toLocaleDateString() %> at <%= message.added.toLocaleTimeString() %></span>
+              </div>
+              <div class="message-text">
+                <%= message.text %>
+              </div>
+              <div class="message-actions">
+                <a href="/message/<%= message.id %>" class="open-btn">Open</a>
+              </div>
+            </div>
+          <% }) %>
+        <% } %>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

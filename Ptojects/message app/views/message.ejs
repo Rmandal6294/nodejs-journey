@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><%= title %></h1>
+      <a href="/" class="back-btn">← Back to Messages</a>
+    </header>
+
+    <main>
+      <div class="message-detail">
+        <div class="message-header">
+          <h2>Message from <%= message.user %></h2>
+          <p class="date">Sent on <%= message.added.toLocaleDateString() %> at <%= message.added.toLocaleTimeString() %></p>
+        </div>
+        
+        <div class="message-content">
+          <p><%= message.text %></p>
+        </div>
+
+        <div class="message-actions">
+          <a href="/" class="back-btn">Back to All Messages</a>
+          <a href="/new" class="reply-btn">Send New Message</a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
